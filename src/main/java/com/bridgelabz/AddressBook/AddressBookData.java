@@ -1,13 +1,17 @@
 package com.bridgelabz.AddressBook;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class AddressBookData {
-    int personId;
-    String firstName;
-    String lastName;
-    String city;
-    String state;
+    public int personId;
+    public String firstName;
+    public String lastName;
+    public String city;
+    public String state;
+    int zipCode;
+    long phoneNUmber;
+    public LocalDate startDate;
 
     @Override
     public boolean equals(Object o) {
@@ -28,8 +32,6 @@ public class AddressBookData {
         return Objects.hash(personId, firstName, lastName, city, state, zipCode, phoneNUmber);
     }
 
-    int zipCode;
-    long phoneNUmber;
 
 
     @Override
@@ -54,5 +56,10 @@ public class AddressBookData {
         this.state = state;
         this.zipCode = zipCode;
         this.phoneNUmber = phoneNUmber;
+    }
+
+    public AddressBookData(int personId, String firstName, String lastName, String city, String state, int zipCode, long phoneNUmber, LocalDate startDate) {
+        this(personId, firstName, lastName, city, state, zipCode, phoneNUmber);
+        this.startDate=startDate;
     }
 }
